@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "tmconfparse": "./tmconfparse.js"
+  },
   "keywords": ["F5", "tmconf", "parse", "JSON", "BIG-IP"],
   "author": "Simon Kowallik",
   "license": "Apache License 2.0",

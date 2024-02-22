@@ -1,13 +1,17 @@
 # tmconfjs
 
-**tmconfjs** parses a single tmconf file (eg. `/config/bigip.conf`) and writes the JSON representation to `STDOUT`.
+**tmconfjs** provides a simple parser (`tmconfparse` command) to serialize a tmconf file (eg. `/config/bigip.conf`) to JSON. The produced JSON is printed to `STDOUT`.
 
 This project is (supposed to be) a minimal wrapper and vendors the necessary code from the community project [F5 BIG-IP Automation Config Converter (BIG-IP ACC)](https://github.com/f5devcentral/f5-automation-config-converter/).
 
 ## Usage example
 
 ```shell
-$ node tmconfparse.js example/test.tmconf 2>/dev/null | jq '."ltm profile client-ssl clientssl-secure"'
+$ npm install -g https://github.com/simonkowallik/tmconfjs
+```
+
+```shell
+$ tmconfparse example/test.tmconf 2>/dev/null | jq '."ltm profile client-ssl clientssl-secure"'
 ```
 
 ```json
@@ -37,7 +41,8 @@ $ node tmconfparse.js example/test.tmconf 2>/dev/null | jq '."ltm profile client
 Any errors or info is written to `STDERR`.
 
 ```shell
-$ node tmconfparse.js example/test.tmconf >/dev/null
+# run node and tmconfparse.js as first argument followed by tmconfparse arguments.
+$ node ./tmconfparse.js example/test.tmconf >/dev/null
 Debugger attached.
 2024-02-17 00:29:17 WARN UNRECOGNIZED LINE: '     auto-check enabled'
 2024-02-17 00:29:17 WARN UNRECOGNIZED LINE: '     auto-phonehome enabled'
