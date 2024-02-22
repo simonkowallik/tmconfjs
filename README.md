@@ -7,11 +7,12 @@ This project is (supposed to be) a minimal wrapper and vendors the necessary cod
 ## Usage example
 
 ```shell
-$ npm install -g https://github.com/simonkowallik/tmconfjs
+npm install -g https://github.com/simonkowallik/tmconfjs
 ```
 
 ```shell
-$ tmconfparse example/test.tmconf 2>/dev/null | jq '."ltm profile client-ssl clientssl-secure"'
+tmconfparse example/test.tmconf 2>/dev/null \
+    | jq '."ltm profile client-ssl clientssl-secure"'
 ```
 
 ```json
@@ -42,8 +43,10 @@ Any errors or info is written to `STDERR`.
 
 ```shell
 # run node and tmconfparse.js as first argument followed by tmconfparse arguments.
-$ node ./tmconfparse.js example/test.tmconf >/dev/null
-Debugger attached.
+node ./tmconfparse.js example/test.tmconf >/dev/null
+```
+
+```shell
 2024-02-17 00:29:17 WARN UNRECOGNIZED LINE: '     auto-check enabled'
 2024-02-17 00:29:17 WARN UNRECOGNIZED LINE: '     auto-phonehome enabled'
 2024-02-17 00:29:17 WARN UNRECOGNIZED LINE: '   time 500'
