@@ -2,7 +2,9 @@
 
 **tmconfjs** provides a simple parser (`tmconfjs` command) to serialize a tmconf file (eg. `/config/bigip.conf`) to JSON. The produced JSON is printed to `STDOUT` or a specified file.
 
-This project is a minimal wrapper and vendors the necessary code from the community project [F5 BIG-IP Automation Config Converter (BIG-IP ACC)](https://github.com/f5devcentral/f5-automation-config-converter/).
+This project aims to be a minimalistic dependency free tool. It vendors the necessary code from the community project [F5 BIG-IP Automation Config Converter (BIG-IP ACC)](https://github.com/f5devcentral/f5-automation-config-converter/).
+
+The TMOS configuration parser [f5-corkscrew](https://github.com/f5devcentral/f5-corkscrew) is a more sophisticated alternative with advanced functionality and active development.
 
 ## Documentation by example
 
@@ -199,6 +201,12 @@ node example/demo.js
 }
 ```
 
-## Disclaimer
+## Disclaimer, Support, License
 
-Please read and understand the [LICENSE](./LICENSE) as well as the provided [SUPPORT.md](./SUPPORT.md).
+Please read and understand the [LICENSE](./LICENSE) first.
+
+There is no support on this project. It is maintained on best effort basis without any warranties.
+
+For any software or components used in this project, read their own LICENSE and SUPPORT policies.
+
+If you decide to use this project, you are solely responsible.
